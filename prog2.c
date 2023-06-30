@@ -16,8 +16,8 @@ void reverse_string(char str[])
     while(i<j)
     {
         str[i]=str[i]+str[j];
-        str[j]=str[i]+str[j];
-        str[i]=str[i]+str[j];
+        str[j]=str[i]-str[j];
+        str[i]=str[i]-str[j];
         i++;
         j--;
     }

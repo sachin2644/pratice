@@ -4,8 +4,6 @@ void reverse_string(char str[]);
 int main()
 {
     char str[]="to be honest";
-    // int len;
-    // len=sizeof(str)/sizeof(str[0])-1;
     reverse_string(str);
     printf("%s\n",str);
 }
@@ -15,9 +13,9 @@ void reverse_string(char str[])
     j=strlen(str)-1;
     while(i<j)
     {
-        str[i]=str[i]+str[j];
-        str[j]=str[i]-str[j];
-        str[i]=str[i]-str[j];
+        int temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
         i++;
         j--;
     }

@@ -1,22 +1,24 @@
 #include<stdio.h>
-void reverse_string(char str[],int len);
+#include<string.h>
+void reverse_string(char str[]);
 int main()
 {
     char str[]="to be honest";
-    int len;
-    len=sizeof(str)/sizeof(str[0])-1;
-    reverse_string(str,len);
-}
-void reverse_string(char str[],int len)
-{
-    int i=0;
-    while(i<len)
-    {
-        int temp=str[i];
-        str[i]=str[len-1];
-        str[len-1]=temp;
-        i++;
-        len--;
-    }
+    // int len;
+    // len=sizeof(str)/sizeof(str[0])-1;
+    reverse_string(str);
     printf("%s\n",str);
+}
+void reverse_string(char str[])
+{
+    int j=0,i=0;
+    j=strlen(str)-1;
+    while(i<j)
+    {
+        str[i]=str[i]^str[j];
+        str[j]=str[i]^str[j];
+        str[i]=str[i]^str[j];
+        i++;
+        j--;
+    }
 }

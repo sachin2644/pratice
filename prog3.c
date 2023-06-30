@@ -8,8 +8,7 @@ struct student
 int main()
 {
     struct student std;
-    struct student *ptr=&std;
     printf("Enter student id, name and address :");
-    scanf("%d%s%s",&ptr->id,ptr->name,ptr->address);
-    printf("%d\n%s\n%s\n",ptr->id,ptr->name,ptr->address);
+    scanf("%d%s%s",&std.id,std.name,std.address);
+    printf("%d\n%s\n%s\n",std.id,std.name,std.address);
 }

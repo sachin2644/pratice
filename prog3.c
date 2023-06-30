@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 struct student
 {
     int id;
@@ -8,7 +9,18 @@ struct student
 int main()
 {
     struct student std;
-    printf("Enter student id, name and address :");
-    scanf("%d%s%s",&std.id,std.name,std.address);
-    printf("%d\n%s\n%s\n",std.id,std.name,std.address);
+    struct student *ptr;
+    ptr=(struct student *)malloc(sizeof(struct student));
+    if(ptr==NULL)
+    {
+        printf("Memory is unable to allocate\n");
+    }
+    else
+    {
+        printf("Memory successfully allocate using malloc \n");
+    }
+    printf("Enter student id name and address :");
+    scanf("%d%s%s",&ptr->id,ptr->name,ptr->address);
+    printf("student information displaying below \n");
+    printf("id=%d\nname=%s\naddress=%s\n",ptr->id,ptr->name,ptr->address);
 }

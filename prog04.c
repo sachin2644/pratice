@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<limits.h>
+int find_largest_element(int arr[],int n);
 int main()
 {
-    int n,*arr;
+    int n,*arr,result;
     printf("Enter size :");
     scanf("%d",&n);
-    int big=INT_MIN;
     arr=(int *)malloc(n*sizeof(int));
     if(arr==NULL)
     {
@@ -17,17 +17,19 @@ int main()
         printf("Memory successfully allocated using malloc\n");
     }
     printf("Enter array elements :");
+    result=find_largest_element(arr,n);
+    printf("largest element in an array = %d\n",result);
+    free(arr);
+}
+int find_largest_element(int arr[],int n)
+{
+    int large=INT_MIN;
     for(int i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
-    }
-    for(int i=0;i<n;i++)
-    {
-        if(arr[i]>big)
+        if(arr[i]>large)
         {
-            big=arr[i];
+            large=arr[i];
         }
     }
-    printf("largest element in an array is %d\n",big);
-    free(arr);
+    return large;
 }

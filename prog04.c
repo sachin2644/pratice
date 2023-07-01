@@ -17,6 +17,10 @@ int main()
         printf("Memory successfully allocated using malloc\n");
     }
     printf("Enter array elements :");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
     result=find_largest_element(arr,n);
     printf("largest element in an array = %d\n",result);
     free(arr);

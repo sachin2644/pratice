@@ -23,7 +23,6 @@ int main()
     }
     result=find_largest_element(arr,n);
     printf("largest element in an array = %d\n",result);
-    free(arr);
 }
 int find_largest_element(int arr[],int n)
 {

@@ -26,6 +26,7 @@ int main()
     res=find_small_element(arr,n);
     printf("largest element in an array = %d\n",result);
     printf("smallest element in an array = %d\n",res);
+    free(arr);
 }
 int find_largest_element(int arr[],int n)
 {

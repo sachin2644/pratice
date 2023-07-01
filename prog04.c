@@ -2,9 +2,10 @@
 #include<stdlib.h>
 #include<limits.h>
 int find_largest_element(int arr[],int n);
+int find_small_element(int arr[],int n);
 int main()
 {
-    int n,*arr,result;
+    int n,*arr,result,res;
     printf("Enter size :");
     scanf("%d",&n);
     arr=(int *)malloc(n*sizeof(int));
@@ -22,7 +23,9 @@ int main()
         scanf("%d",&arr[i]);
     }
     result=find_largest_element(arr,n);
+    res=find_small_element(arr,n);
     printf("largest element in an array = %d\n",result);
+    printf("smallest element in an array = %d\n",res);
 }
 int find_largest_element(int arr[],int n)
 {
@@ -35,4 +38,16 @@ int find_largest_element(int arr[],int n)
         }
     }
     return large;
+}
+int find_small_element(int arr[],int n)
+{
+    int small=INT_MAX;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]<small)
+        {
+            small=arr[i];
+        }
+    }
+    return small;
 }

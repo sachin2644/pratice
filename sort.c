@@ -1,5 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
+void reverse_array(int arr[],int size)
+{
+    int i;
+    for(i=size-1;i>=0;i--)
+    {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
 void print_array(int arr[],int size)
 {
     for(int i=0;i<size;i++)
@@ -16,9 +25,9 @@ void sort_array(int arr[],int size)
         {
             if(arr[i]>arr[j])
             {
-                arr[i]=arr[i]+arr[j];
-                arr[j]=arr[i]-arr[j];
-                arr[i]=arr[i]-arr[j];
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
             }
         }
     }
@@ -44,4 +53,5 @@ int main()
     }
     sort_array(ptr,size);
     print_array(ptr,size);
+    reverse_array(ptr,size);
 }

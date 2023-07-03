@@ -18,9 +18,17 @@ void remove_char(char str[],char ch)
     {
         if(str[i]==ch)
         {
-            for(int j=i;str[j]!='\0';j++)
+            for(int j=0;str[j]!='\0';j++)
             {
-                str[j]=str[j+1];
+                for(int k=j+1;str[k]!='\0';k++)
+                {
+                    if(str[j]>str[k])
+                    {
+                        int temp=str[j];
+                        str[j]=str[k];
+                        str[k]=temp;
+                    }
+                }
             }
         }
     }

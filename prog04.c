@@ -13,10 +13,6 @@ int main()
     {
         printf("Memory allocation is failed\n");
     }
-    else
-    {
-        printf("Memory successfully allocated using malloc\n");
-    }
     printf("Enter array elements :");
     for(int i=0;i<n;i++)
     {

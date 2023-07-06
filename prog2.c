@@ -13,10 +13,10 @@ void reverse_string(char str[])
     j=strlen(str)-1;
     while(i<j)
     {
-        int temp=str[i];
-        str[i]=str[j];
-        str[j]=temp;
-        i++;
-        j--;
+       str[i]=str[i]+str[j];
+       str[j]=str[i]-str[j];
+       str[i]=str[i]-str[j];
+       i++;
+       j--;
     }
 }
